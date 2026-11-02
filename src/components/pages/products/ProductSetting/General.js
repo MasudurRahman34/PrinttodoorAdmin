@@ -1,12 +1,13 @@
+"use client";
 import Loader from "@/components/ui/Loader";
 import { getSingleProductQuery } from "@/resolvers/query";
 import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import React from "react";
 
 const General = () => {
-  const router = useRouter();
-  const { slug } = router.query;
+  const params = useParams();
+  const slug = params?.slug;
   const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: ["getSingleProductQuery", slug],
     queryFn: () => getSingleProductQuery(slug),

@@ -1,3 +1,4 @@
+"use client";
 import { useAuth } from "@/hooks/useAuth";
 import useScreenWidth from "@/hooks/useScreenWidth";
 import React, { useEffect, useState } from "react";

@@ -1,3 +1,4 @@
+"use client";
 import { useAuth } from "@/hooks/useAuth";
 
 import {
@@ -6,15 +7,15 @@ import {
   getSingleTopListForProductQuery,
 } from "@/resolvers/query";
 import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import React from "react";
 import UpdateTopListForm from "./UpdateTopListForm";
 import Loading from "@/components/ui/Loading";
 
 const SingleTopListPageComponent = () => {
-  const router = useRouter();
+  const params = useParams();
   const { session } = useAuth();
-  const { top_list_id } = router.query;
+  const top_list_id = params?.top_list_id;
 
   const { data, isLoading, refetch, isError } = useQuery({
     queryKey: ["single_top_list", top_list_id, session?.token],

@@ -1,5 +1,5 @@
+"use client";
 import DeleteModal from "@/components/ui/DeleteModal";
-import categories from "@/pages/categories";
 import { deleteProductMutation } from "@/resolvers/mutation";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";

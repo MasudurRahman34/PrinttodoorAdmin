@@ -1,22 +1,26 @@
-import Head from "next/head";
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 
 const MetaData = ({ title, description }) => {
-  return (
-    <Head>
-      <title>weareprintlab {title && `- ${title}`}</title>
-      <meta
-        name="description"
-        content={`
-            ${
-              description
-                ? description
-                : "Weareprintlab is a platform that allows you to create and sell custom print-on-demand products."
-            } 
-        `}
-      />
-    </Head>
-  );
+  useEffect(() => {
+    if (title) {
+      document.title = `weareprintlab - ${title}`;
+    } else {
+      document.title = "weareprintlab";
+    }
+
+    if (description) {
+      let meta = document.querySelector('meta[name="description"]');
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.name = "description";
+        document.head.appendChild(meta);
+      }
+      meta.content = description;
+    }
+  }, [title, description]);
+
+  return null;
 };
 
 export default MetaData;

@@ -63682,8 +63682,6 @@ select {
 }
 .embedded-breadcrumb:before {
   opacity: 0.7;
-}
-.embedded-breadcrumb:before::before {
   --tw-content: "";
   content: var(--tw-content);
 }

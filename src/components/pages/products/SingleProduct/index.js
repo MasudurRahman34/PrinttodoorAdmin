@@ -1,3 +1,4 @@
+"use client";
 import ConfigureTable from "../ProductSetting/ConfigureTable";
 import AccordionsCard from "./AccordionsCard";
 import AddProductmiddle from "./AddProductmiddle";
@@ -10,12 +11,12 @@ import {
   getSingleProductQuery,
 } from "@/resolvers/query";
 import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import React from "react";
 
 const SingleProduct = () => {
-  const router = useRouter();
-  const { slug } = router.query;
+  const params = useParams();
+  const slug = params?.slug;
 
   const { data, isLoading, isError, error, refetch, isFetched } = useQuery({
     queryKey: ["getSingleProductQuery", slug],

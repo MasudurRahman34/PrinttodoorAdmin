@@ -1,3 +1,4 @@
+"use client";
 import CategorySelect from "@/components/CategorySelect";
 import MediaAttach from "@/components/MediaAttach";
 import MetaData from "@/components/MetaData";
@@ -6,7 +7,7 @@ import { updateCategoryMutation } from "@/resolvers/mutation";
 import { getSingleCategoryQuery } from "@/resolvers/query";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import React, { memo, useEffect } from "react";
 import toast from "react-hot-toast";
 
@@ -15,8 +16,8 @@ const TextEditor = dynamic(() => import("@/components/TextEditor"), {
 });
 
 const SingleCategory = () => {
-  const router = useRouter();
-  const { slug } = router.query;
+  const params = useParams();
+  const slug = params?.slug;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const { data, isLoading, isError, error, refetch } = useQuery({

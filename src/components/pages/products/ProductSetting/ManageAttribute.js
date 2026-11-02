@@ -1,3 +1,4 @@
+"use client";
 import AttributeList from "./AttributeList";
 import OptionAccordions from "./OptionAccordions";
 import Loading from "@/components/ui/Loading";
@@ -11,7 +12,6 @@ import {
   getProductAttributeExistanceQuery,
 } from "@/resolvers/query";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/router";
 import React, { useEffect, useState, useMemo } from "react";
 import toast from "react-hot-toast";
 import CombinationChangeAlert from "./CombinationChangeAlert";

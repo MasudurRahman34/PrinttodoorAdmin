@@ -1,10 +1,10 @@
+"use client";
 import CreateProductModal from "./CreateProductModal";
 import ProductTable from "./ProductTable";
 import { getAllProducts } from "@/resolvers/query";
 import { useQuery } from "@tanstack/react-query";
 import { Grid } from "gridjs-react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { BsFiletypeCsv } from "react-icons/bs";
 import { FaRegFilePdf } from "react-icons/fa";

@@ -1,8 +1,9 @@
+"use client";
 import CategorySelect from "@/components/CategorySelect";
 import TextEditor from "@/components/TextEditor";
 import { addProductMutation } from "@/resolvers/mutation";
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 

@@ -1,9 +1,9 @@
+"use client";
 import { useAuth } from "@/hooks/useAuth";
 import useToastMessage from "@/hooks/useToastMessage";
 import { addProductMutation } from "@/resolvers/mutation";
 import { useMutation } from "@tanstack/react-query";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import Modal from "react-modal";
@@ -21,7 +21,6 @@ const product_types = [
 const CreateProductModal = ({ modalIsOpen = false, setIsOpen }) => {
   const showToastMessage = useToastMessage();
   const { session, isAuthenticated } = useAuth();
-  const router = useRouter();
   const [formData, setFormData] = useState({
     title: "",
     type: "",

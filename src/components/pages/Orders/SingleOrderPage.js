@@ -1,15 +1,16 @@
+"use client";
 import Loading from "@/components/ui/Loading";
 import OrdersList from "@/components/ui/OrdersList";
 import { useAuth } from "@/hooks/useAuth";
 import { getOrderById } from "@/resolvers/query";
 import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import React from "react";
 
 const OrdersDetails = () => {
   const { session } = useAuth();
-  const router = useRouter();
-  const { order_id } = router.query;
+  const params = useParams();
+  const order_id = params?.order_id;
 
   const { data, isError, isLoading, refetch } = useQuery({
     queryKey: ["get-orders_by_id", order_id, session?.token],

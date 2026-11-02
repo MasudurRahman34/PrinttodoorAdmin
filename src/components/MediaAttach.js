@@ -1,3 +1,4 @@
+"use client";
 import Pagination from "./Pagination";
 import useToastMessage from "@/hooks/useToastMessage";
 import { attachMediaMutation } from "@/resolvers/mutation";

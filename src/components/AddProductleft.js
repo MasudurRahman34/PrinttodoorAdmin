@@ -1,3 +1,4 @@
+"use client";
 import Pagination from "./Pagination";
 import CreateProductModal from "./pages/products/CreateProductModal";
 import Loading from "./ui/Loading";

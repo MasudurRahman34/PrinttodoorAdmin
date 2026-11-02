@@ -1,6 +1,7 @@
+"use client";
 // hooks/useAuth.js
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 

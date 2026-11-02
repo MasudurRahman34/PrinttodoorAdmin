@@ -1,3 +1,4 @@
+"use client";
 import { useAuth } from "@/hooks/useAuth";
 import useToastMessage from "@/hooks/useToastMessage";
 import { loginMutation } from "@/resolvers/mutation";

@@ -1,15 +1,16 @@
+"use client";
 import Loading from "@/components/ui/Loading";
 import OrdersList, { OrderItemCard } from "@/components/ui/OrdersList";
 import { useAuth } from "@/hooks/useAuth";
 import { getOrderItemById } from "@/resolvers/query";
 import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import React from "react";
 
 const SingleOrderItemComponent = () => {
   const { session } = useAuth();
-  const router = useRouter();
-  const { order_item_id } = router.query;
+  const params = useParams();
+  const order_item_id = params?.order_item_id;
 
   const { data, isError, isLoading, refetch } = useQuery({
     queryKey: ["get_order_items_by_id", order_item_id, session?.token],

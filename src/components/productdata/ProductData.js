@@ -1,9 +1,10 @@
+"use client";
 import ArtworkComponent from "../pages/products/ProductSetting/Artwork";
 import ArtworkService from "../pages/products/ProductSetting/ArtworkService";
 import Attribute from "../pages/products/ProductSetting/Attribute";
 import DeliveryService from "../pages/products/ProductSetting/DeliveryService";
 import Specification from "../pages/products/ProductSetting/Specification";
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import QuantityRule from "../pages/products/ProductSetting/QuantityRule";
 
@@ -44,8 +45,8 @@ export default function ProductData({
   combination_refetch,
   combination_data,
 }) {
-  const router = useRouter();
-  const { slug } = router.query;
+  const params = useParams();
+  const slug = params?.slug;
   const [active, setActive] = useState("Artwork");
 
   useEffect(() => {

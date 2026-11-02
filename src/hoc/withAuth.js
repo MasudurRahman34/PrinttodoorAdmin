@@ -1,5 +1,6 @@
+"use client";
 import { useAuth } from "@/hooks/useAuth";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect, memo } from "react";
 
 const withAuth = (WrappedComponent) => {
@@ -29,7 +30,7 @@ const withAuth = (WrappedComponent) => {
             />
           </svg>
         </div>
-      ); // or a loading spinner
+      );
     }
 
     // If not loading, redirect to login if not authenticated

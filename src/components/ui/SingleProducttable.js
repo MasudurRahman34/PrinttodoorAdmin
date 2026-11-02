@@ -1,8 +1,11 @@
-import { useRouter } from "next/router";
+"use client";
+import { useRouter, useParams } from "next/navigation";
 
 export default function SingleProducttable({ product }) {
   const router = useRouter();
-  const { slug, id } = router.query;
+  const params = useParams();
+  const slug = params?.slug;
+  const id = params?.id;
   return (
     <tr
       className={`product-list cursor-pointer ${
