@@ -35067,7 +35067,7 @@ h6 {
   border-color: rgb(var(--success) / 0.2) !important;
 }
 .\!border-teal {
-  border-color: rgb(var(-teal)) !important;
+  border-color: rgb(var(--teal)) !important;
 }
 .\!border-transparent {
   border-color: transparent !important;
@@ -35495,7 +35495,7 @@ h6 {
   background-color: rgb(var(--success) / 0.1) !important;
 }
 .\!bg-teal {
-  background-color: rgb(var(-teal)) !important;
+  background-color: rgb(var(--teal)) !important;
 }
 .\!bg-transparent {
   background-color: transparent !important;
@@ -37861,7 +37861,7 @@ h6 {
   color: rgb(var(--success)) !important;
 }
 .\!text-teal {
-  color: rgb(var(-teal)) !important;
+  color: rgb(var(--teal)) !important;
 }
 .\!text-warning {
   color: rgb(var(--warning)) !important;
@@ -38033,7 +38033,7 @@ h6 {
   color: rgb(var(--success));
 }
 .text-teal {
-  color: rgb(var(-teal));
+  color: rgb(var(--teal));
 }
 .text-textmuted {
   color: rgb(var(--text-muted));
@@ -38732,9 +38732,6 @@ h6 {
 }
 .\[--trigger\:click\] {
   --trigger: click;
-}
-.\[-\:\=\] {
-  -: =;
 }
 :root {
   --body-bg: 240 241 247;
